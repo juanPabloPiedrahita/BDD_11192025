@@ -28,11 +28,12 @@ CREATE TABLE book(
     id_book SERIAL PRIMARY KEY,
     name_book VARCHAR(50) NOT NULL,
     sipnosis TEXT NOT NULL,
-    isbn UNIQUE VARCHAR(20) NOT NULL,
+    isbn VARCHAR(20) NOT NULL,
     publish_date TIMESTAMP NOT NULL,
     create_at TIMESTAMP NOT NULL DEFAULT NOW(),
     update_at TIMESTAMP NOT NULL,
-    avalaible BOOLEAN NOT NULL DEFAULT TRUE
+    avalaible BOOLEAN NOT NULL DEFAULT TRUE,
+    UNIQUE(isbn)
 );
 
 CREATE TABLE author_book(
